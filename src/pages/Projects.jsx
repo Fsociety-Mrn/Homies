@@ -2,7 +2,16 @@ import React from 'react'
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <div 
+    style={{ 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      height: '100vh' 
+    }}>
+    <h1>Projects</h1>
+    
+    </div>
   )
 }
 
