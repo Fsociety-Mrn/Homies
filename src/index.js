@@ -60,7 +60,7 @@ root.render(
   <CssBaseline />
     <ThemeProvider theme={theme}>
 
-      <Box sx={{ backgroundColor: '#e7e5d6b5', minHeight: '100vh' }}>
+      <Box sx={{ backgroundColor: '#F9F9F5', minHeight: '100vh' }}>
         <App />
         </Box>
 

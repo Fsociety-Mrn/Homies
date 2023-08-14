@@ -7,7 +7,8 @@ const Contact = () => {
       display: 'flex', 
       justifyContent: 'center', 
       alignItems: 'center', 
-      height: '100vh' 
+      height: '100vh' ,
+
     }}>
 
     <h1>Contact</h1>

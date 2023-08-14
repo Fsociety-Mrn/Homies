@@ -51,6 +51,26 @@ export const Appbar = () => {
 
 
 const DesktopAppBar = () => {
+
+  // vairant value of each button
+  const [variant, setVariant] = React.useState({
+    home:"text",
+    projects:"text",
+    about:"text",
+    contact:"text",
+  })
+
+  // change button variant when clicked or scroll
+  const handleSetActive = (sectionName) => {
+    console.log(sectionName)
+    setVariant({
+      home: sectionName === 'home' ? 'contained' : 'text',
+      projects: sectionName === 'projects' ? 'contained' : 'text',
+      about: sectionName === 'about' ? 'contained' : 'text',
+      contact: sectionName === 'contact' ? 'contained' : 'text',
+    });
+  };
+
   return (
     <div>
       <AppBar position="fixed" 
@@ -76,32 +96,49 @@ const DesktopAppBar = () => {
               spacing={1}>
 
               {/* Home Button */}
-                <Button color="primary" variant='text' sx={menuButtonCSS}>
-                  <Link to="home" smooth={true} duration={500} >
+                <Button color="primary" variant={variant.home} sx={menuButtonCSS} 
+                onClick={()=>handleSetActive('home')}>
+                  <Link to="home" 
+                  smooth={true} 
+                  offset={0} 
+                  duration={500} 
+                  onSetActive={()=>handleSetActive('home')}>
                     <strong>Home</strong>
                   </Link>
                 </Button>
 
                 
               {/* Projects Button */}
-                <Button color="primary" variant='text' sx={menuButtonCSS}>
-                  <Link to="projects" smooth={true} duration={500}>
+                <Button color="primary" variant={variant.projects} sx={menuButtonCSS}>
+                  <Link to="projects" 
+                  smooth={true} 
+                  offset={-670} 
+                  duration={500} 
+                  onSetActive={()=>handleSetActive('projects')}>
                     <strong>Projects</strong>
                   </Link>
                 </Button>
 
                 
               {/* About Button */}
-                <Button color="primary" variant='text' sx={menuButtonCSS}>
-                  <Link to="about" smooth={true} duration={500}>
+                <Button color="primary" variant={variant.about} sx={menuButtonCSS}>
+                  <Link to="about" 
+                  smooth={true} 
+                  offset={600} 
+                  duration={500} 
+                  onSetActive={()=>handleSetActive('about')}>
                     <strong>About</strong>
                   </Link>
                 </Button>
 
                 
               {/* Contact Button */}
-                <Button color="primary" variant='text' sx={menuButtonCSS}>
-                  <Link to="contact" smooth={true} duration={500}>
+                <Button color="primary" variant={variant.contact} sx={menuButtonCSS}>
+                  <Link to="contact" 
+                  smooth={true} 
+                  offset={-10} 
+                  duration={500} 
+                  onSetActive={()=>handleSetActive('contact')}>
                     <strong>Contact</strong>
                   </Link>
                 </Button>
