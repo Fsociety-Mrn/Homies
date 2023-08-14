@@ -62,7 +62,6 @@ const DesktopAppBar = () => {
 
   // change button variant when clicked or scroll
   const handleSetActive = (sectionName) => {
-    console.log(sectionName)
     setVariant({
       home: sectionName === 'home' ? 'contained' : 'text',
       projects: sectionName === 'projects' ? 'contained' : 'text',
@@ -74,8 +73,8 @@ const DesktopAppBar = () => {
   return (
     <div>
       <AppBar position="fixed" 
-      color='secondary'
-      >
+      color='secondary'>
+
         <Toolbar>
           <Grid
           container
@@ -97,50 +96,77 @@ const DesktopAppBar = () => {
 
               {/* Home Button */}
                 <Button color="primary" variant={variant.home} sx={menuButtonCSS} 
-                onClick={()=>handleSetActive('home')}>
-                  <Link to="home" 
-                  smooth={true} 
+                // onClick={()=>handleSetActive('home')}
+                >
 
-                  duration={500} 
-                  onSetActive={()=>handleSetActive('home')}>
+                  <Link to="home" 
+                  spy={true} 
+                  smooth={true} 
+                  offset={160} 
+                  duration={1000} 
+                  onSetActive={(active)=>handleSetActive(active)}>
                     <strong>Home</strong>
                   </Link>
+
+                  {/* <strong>Home</strong> */}
+
                 </Button>
 
                 
               {/* Projects Button */}
-                <Button color="primary" variant={variant.projects} sx={menuButtonCSS}>
-                  <Link to="projects" 
+                <Button color="primary" variant={variant.projects} sx={menuButtonCSS}
+                // onClick={()=>handleSetActive('projects')}
+                >
+
+                  <Link to="projects"
+                  spy={true}  
                   smooth={true} 
-    
-                  duration={500} 
-                  onSetActive={()=>handleSetActive('projects')}>
+                  offset={160} 
+                  duration={1000} 
+                  onSetActive={(active)=>handleSetActive(active)}>
                     <strong>Projects</strong>
                   </Link>
+
+                  {/* <strong>Projects</strong> */}
+                  
                 </Button>
 
                 
               {/* About Button */}
-                <Button color="primary" variant={variant.about} sx={menuButtonCSS}>
-                  <Link to="about" 
-                  smooth={true} 
+                <Button color="primary" variant={variant.about} sx={menuButtonCSS}
+                // onClick={()=>handleSetActive('about')}
+                >
 
-                  duration={500} 
-                  onSetActive={()=>handleSetActive('about')}>
+                  <Link to="about"
+                  spy={true}  
+                  smooth={true} 
+                  offset={160} 
+                  duration={1000} 
+                  onSetActive={(active)=>handleSetActive(active)}>
                     <strong>About</strong>
-                  </Link>
+                  </Link> 
+
+                  {/* <strong>About</strong> */}
+
                 </Button>
 
                 
               {/* Contact Button */}
-                <Button color="primary" variant={variant.contact} sx={menuButtonCSS}>
-                  <Link to="contact" 
+                <Button color="primary" variant={variant.contact} sx={menuButtonCSS}
+                // onClick={()=>handleSetActive('contact')}
+                >
+
+                  <Link to="contact"
+                  spy={true}  
                   smooth={true} 
-                
-                  duration={500} 
-                  onSetActive={()=>handleSetActive('contact')}>
+                  offset={160} 
+                  duration={1000} 
+                  onSetActive={(active)=>handleSetActive(active)}>
                     <strong>Contact</strong>
                   </Link>
+                  
+                  {/* <strong>Contact</strong> */}
+
                 </Button>
           
               </Stack>
