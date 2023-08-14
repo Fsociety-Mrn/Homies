@@ -100,7 +100,7 @@ const DesktopAppBar = () => {
                 onClick={()=>handleSetActive('home')}>
                   <Link to="home" 
                   smooth={true} 
-                  offset={0} 
+
                   duration={500} 
                   onSetActive={()=>handleSetActive('home')}>
                     <strong>Home</strong>
@@ -112,7 +112,7 @@ const DesktopAppBar = () => {
                 <Button color="primary" variant={variant.projects} sx={menuButtonCSS}>
                   <Link to="projects" 
                   smooth={true} 
-                  offset={-670} 
+    
                   duration={500} 
                   onSetActive={()=>handleSetActive('projects')}>
                     <strong>Projects</strong>
@@ -124,7 +124,7 @@ const DesktopAppBar = () => {
                 <Button color="primary" variant={variant.about} sx={menuButtonCSS}>
                   <Link to="about" 
                   smooth={true} 
-                  offset={600} 
+
                   duration={500} 
                   onSetActive={()=>handleSetActive('about')}>
                     <strong>About</strong>
@@ -136,7 +136,7 @@ const DesktopAppBar = () => {
                 <Button color="primary" variant={variant.contact} sx={menuButtonCSS}>
                   <Link to="contact" 
                   smooth={true} 
-                  offset={-10} 
+                
                   duration={500} 
                   onSetActive={()=>handleSetActive('contact')}>
                     <strong>Contact</strong>
